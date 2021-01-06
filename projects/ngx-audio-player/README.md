@@ -69,7 +69,7 @@ export class AppModule { }
 ```html
 <ngx-audio-player [playlist]="msaapPlaylist" [displayTitle]="msaapDisplayTitle" [autoPlay]="false" 
     muted="muted" [displayPlaylist]="msaapDisplayPlayList" [pageSizeOptions]="pageSizeOptions" (trackEnded)="onEnded($event)"
-        [displayVolumeControls]="msaapDisplayVolumeControls" [disablePositionSlider]="msaapDisablePositionSlider" 
+        [displayVolumeControls]="msaapDisplayVolumeControls" [displayVolumeSlider]="msaapDisplayVolumeSlider" [disablePositionSlider]="msaapDisablePositionSlider" 
         [displayArtist]="msaapDisplayArtist" [displayDuration]="msaapDisplayDuration"
         [expanded]="true"></ngx-audio-player> 
 ```
@@ -88,6 +88,7 @@ msaapPageSizeOptions = [2,4,6];
 msaapDisplayVolumeControls = true;
 msaapDisplayArtist = false;
 msaapDisplayDuration = false;
+msaapDisplayVolumeSlider = false;
 msaapDisablePositionSlider = true;
    
 // Material Style Advance Audio Player Playlist
@@ -127,6 +128,8 @@ msaapPlaylist: Track[] = [
 | @Input() displayArtist = false;            | true - if the artist data is to be shown            | optional  | false         |
 | @Input() displayDuration = false;          | true - if the track duration is to be shown         | optional  | false         |
 | @Output() trackEnded: Subject<string>      | Callback method that triggers once the track ends   | optional  | - N.A -       |
+| @Input() displayVolumeSlider = false;      | true - if the volume slider should be shown         | optional  | true          |
+| @Output() trackEnded: Subject<string>      | Callback method thats triggers once the track ends  | optional  | - N.A -       |
 | @Input() startOffset = 0;                  | offset from start of audio file in seconds          | optional  | 0             |
 | @Input() endOffset = 0;                    | offset from end of audio file in seconds            | optional  | 0             |
 | @Input() disablePositionSlider = false;    | true - if the position slider needs to be disabled  | optional  | false         |

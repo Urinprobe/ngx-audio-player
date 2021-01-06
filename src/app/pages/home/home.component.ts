@@ -54,6 +54,7 @@ export class HomeComponent {
   msaapDisplayVolumeControls = true;
   msaapDisplayArtist = false;
   msaapDisplayDuration = false;
+  msaapDisplayVolumeSlider = true;
   msaapDisablePositionSlider = false;
 
   msaapTableHeader: string = 'My Playlist';
@@ -171,6 +172,10 @@ export class HomeComponent {
 
   changeMsaapDisplayDuration(event) {
     this.msaapDisplayDuration = event.checked;
+  }
+
+  changeMsaapDisplayVolumeSlider(event) {
+    this.msaapDisplayVolumeSlider = event.checked;
   }
 
   changeMsaapDisablePositionSlider(event) {
